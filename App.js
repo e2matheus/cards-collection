@@ -1,10 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Card from './src/components/Card';
+import CardDetailsBox from './src/components/CardDetailsBox';
+
 const App = () => {
   return (
         <View style={styles.container} >
-          <Text>Cards Collection</Text>
+          <View style={styles.itemsWrapper}>
+            <Text style={styles.sectionTitle}>Today's cards</Text>
+            <View style={styles.items}>
+              <Card title="Card 1" />
+              <Card title="Card 2" />
+              <CardDetailsBox name="Rei, the Summoner" level={0} cardType="unit" />
+            </View>
+          </View>
         </View>
   );
 };
@@ -12,9 +22,18 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#E8EAED',
+  },
+  itemsWrapper: {
+    paddingTop: 80,
+    paddingHorizontal: 20,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  items: {
+    marginTop: 30,
   },
 });
 
